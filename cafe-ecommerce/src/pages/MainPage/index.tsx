@@ -10,16 +10,20 @@ const MainPage = () => {
       <Container>
         <section>
           <header>
-            <div>
+            <div className="logo">
               <Image src={Logo} alt="cup of coffe logo" />
             </div>
+
             <nav>
               <Link to={"/"}>About us</Link>
               <Link to={"/our-product"}>Our Product</Link>
               <Link to={"/Delivery"}>Delivery</Link>
             </nav>
 
-            <InputText placeholder="Search"/>
+            <div className="search-and-chart">
+              <InputText placeholder="Search" />
+              <i className="pi pi-shopping-cart"></i>
+            </div>
           </header>
 
           <main></main>
@@ -31,6 +35,25 @@ const MainPage = () => {
 
 const Container = styled.section`
   padding: 2em 8em;
+
+  & section {
+    & header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & .logo {
+        & img {
+          height: 4em;
+          width: 6em;
+        }
+      }
+
+      & i {
+        font-size: 30px;
+      }
+    }
+  }
 `;
 
 export default MainPage;
