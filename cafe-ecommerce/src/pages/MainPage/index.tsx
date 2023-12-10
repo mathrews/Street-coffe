@@ -1,59 +1,36 @@
-import { Image } from "primereact/image";
-import { InputText } from "primereact/inputtext";
-import Logo from "../../assets/Logo.svg";
-import { styled } from "styled-components";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+import cartIcon from "../../assets/cart button.svg";
 
 const MainPage = () => {
   return (
     <>
       <Container>
-        <section>
-          <header>
-            <div className="logo">
-              <Image src={Logo} alt="cup of coffe logo" />
-            </div>
-
-            <nav>
-              <Link to={"/"}>About us</Link>
-              <Link to={"/our-product"}>Our Product</Link>
-              <Link to={"/Delivery"}>Delivery</Link>
-            </nav>
-
-            <div className="search-and-chart">
-              <InputText placeholder="Search" />
-              <i className="pi pi-shopping-cart"></i>
-            </div>
-          </header>
-
-          <main></main>
+        <section className="welcomes">
+          <section className="publicity">
+            <h1>
+              Enjoy your <span>coffee</span> before your activity
+            </h1>
+            <p>
+              Boost your productivity and build your mood with a glass of coffee
+              in the morning.
+            </p>
+            <button>
+              Order now <img src={cartIcon} />
+            </button>
+            <Link to={"/"}></Link>
+          </section>
+          <section className="image-coffe"></section>
         </section>
       </Container>
     </>
   );
 };
 
-const Container = styled.section`
-  padding: 2em 8em;
-
-  & section {
-    & header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      & .logo {
-        & img {
-          height: 4em;
-          width: 6em;
-        }
-      }
-
-      & i {
-        font-size: 30px;
-      }
-    }
-  }
+const Container = styled.div`
+  background: #f6ebda;
+  height: 100vh;
+  width: 100%;
 `;
 
 export default MainPage;
