@@ -3,11 +3,17 @@ import { InputText } from "primereact/inputtext";
 import Logo from "../../assets/Logo.svg";
 import { styled } from "styled-components";
 import { NavLink } from "react-router-dom";
+import coffeSeeds from "../../assets/bg_img_hero.svg";
 
 const Header = () => {
   return (
     <>
       <Container>
+        
+        <div className="coffe-seeds">
+          <img src={coffeSeeds} />
+        </div>
+
         <section>
           <header>
             <div className="logo">
@@ -27,6 +33,7 @@ const Header = () => {
             </div>
           </header>
         </section>
+
       </Container>
     </>
   );
@@ -35,6 +42,15 @@ const Header = () => {
 const Container = styled.section`
   padding: 2em 8em;
   background-color: #f6ebda;
+  position: relative;
+  z-index: 0;
+
+  & .coffe-seeds {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+  }
 
   & header {
     display: flex;
@@ -48,12 +64,13 @@ const Container = styled.section`
       & img {
         height: 4em;
         width: 6em;
+        pointer-events: none;
       }
     }
 
     & nav {
       display: flex;
-      gap: 1em;
+      gap: 2em;
 
       & a {
         color: #000;
