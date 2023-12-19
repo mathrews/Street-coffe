@@ -3,7 +3,7 @@ import styled from "styled-components";
 import cartIcon from "../../assets/cart button.svg";
 import coffee from "../../assets/unsplash_PKXAiiy1O4U.svg";
 import starIcon from "../../assets/akar-icons_star.svg";
-import coffeBeans from "../../assets/bg_img_hero.svg";
+import coffeBeans from "../../assets/bg_img_hero (2).svg";
 import { Image } from "primereact/image";
 
 const MainPage = () => {
