@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import cartIcon from "../../assets/cart button.svg";
 import coffee from "../../assets/unsplash_PKXAiiy1O4U.svg";
+import starIcon from "../../assets/akar-icons_star.svg";
+import coffeBeans from "../../assets/bg_img_hero.svg";
+import { Image } from "primereact/image";
 
 const MainPage = () => {
   return (
@@ -27,7 +30,6 @@ const MainPage = () => {
           </section>
 
           <section className="image-coffe">
-
             <div className="image">
               <div>
                 <img src={coffee} alt="capuccino" />
@@ -35,15 +37,21 @@ const MainPage = () => {
             </div>
 
             <div className="infos">
-              <div>
-                <span></span>
-                <span></span>
-              </div>
-              <span></span>
+              <span className="name">Cappuccino</span>
+              <span className="rate">
+                4.8
+                <div>
+                  <img src={starIcon} alt="star-avaliation" />
+                </div>
+              </span>
+              <span className="buys">18K</span>
             </div>
-
           </section>
         </section>
+
+        <div className="coffee-beans-bottom">
+          <Image src={coffeBeans}/>
+        </div>
       </Container>
     </>
   );
@@ -113,7 +121,6 @@ const Container = styled.div`
       & .image {
         position: absolute;
         right: 0;
-        z-index: 1;
         background-color: #2f2105;
         width: 26em;
         height: 26em;
@@ -132,9 +139,68 @@ const Container = styled.div`
       }
 
       & .infos {
-        position: relative;
+        position: absolute;
+        right: 0;
+        width: 26em;
+        height: 26em;
+        padding: 3em;
+
+        & .name {
+          position: absolute;
+          left: -2em;
+          top: 1em;
+          color: #2f2105;
+          font-size: 24px;
+          font-weight: 600;
+          background-color: #fff;
+          padding: 0.5em 2em;
+          border-radius: 3em;
+          box-shadow: 0px 0px 0px 10px #ffffff60;
+        }
+
+        & .rate {
+          display: flex;
+          align-items: center;
+          gap: 1px;
+          position: absolute;
+          right: -0.5em;
+          top: 3.5em;
+          color: #2f2105;
+          font-size: 24px;
+          font-weight: 600;
+          background-color: #fff;
+          padding: 0.5em 1.5em;
+          border-radius: 3em;
+          box-shadow: 0px 0px 0px 10px #ffffff60;
+
+          & div img {
+            display: block;
+          }
+        }
+
+        & .buys {
+          position: absolute;
+          bottom: 2em;
+          left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #2f2105;
+          font-size: 24px;
+          font-weight: 600;
+          background-color: #fff;
+          padding: 0.5em 2em;
+          border-radius: 3em;
+          box-shadow: 0px 0px 0px 10px #ffffff60;
+        }
       }
     }
+  }
+
+  & .coffee-beans-bottom {
+    position: absolute;
+    left: 0;
+    margin-top: 3em;
   }
 `;
 
