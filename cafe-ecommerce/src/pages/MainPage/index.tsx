@@ -61,8 +61,8 @@ const MainPage = () => {
                 </section>
 
                 <section className="popular-now">
-                    <h1>
-                        Popular <span>Now</span>
+                    <h1 className="title">
+                        Popular Now<span></span>
                     </h1>
                 </section>
             </Container>
@@ -225,6 +225,27 @@ const Container = styled.div`
             bottom: 0;
             z-index: -1;
         }
+    }
+
+    & .popular-now {
+      position: relative;
+
+      & .title {
+        font-size: 2em;
+        letter-spacing: 1.28px;
+        position: relative;
+        display: inline-block;
+
+        & span {
+          position: absolute;
+          top: 85%;
+          right: 0;
+          width: 2.5em;
+          height: 2px;
+          background-color: #ff902b;
+          border-radius: 12px;
+        }
+      }
     }
 `;
 
