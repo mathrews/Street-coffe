@@ -3,8 +3,7 @@ import styled from "styled-components";
 import cartIcon from "../../assets/cart button.svg";
 import coffee from "../../assets/unsplash_PKXAiiy1O4U.svg";
 import starIcon from "../../assets/akar-icons_star.svg";
-import coffeBeans from "../../assets/bg_img_hero (2).svg";
-import { Image } from "primereact/image";
+import Card from "../../components/Card";
 // import Card from "../../components/Card";
 
 const MainPage = () => {
@@ -25,9 +24,9 @@ const MainPage = () => {
                             </p>
 
                             <div className="buttons-publi">
-                                <button className="order">
+                                <Link to={"/order"} className="order">
                                     Order now <img src={cartIcon} />
-                                </button>
+                                </Link>
                                 <Link to={"/"}>More menu</Link>
                             </div>
                         </section>
@@ -55,15 +54,28 @@ const MainPage = () => {
                         </section>
                     </section>
 
-                    <div className="coffee-beans-bottom">
-                        <Image src={coffeBeans} />
-                    </div>
                 </section>
 
                 <section className="popular-now">
                     <h1 className="title">
                         Popular Now<span></span>
                     </h1>
+
+                    <section className="ul-container">
+                        <div className="ul-section">
+                            <ul className="ul-options">
+                                <li>
+                                    <Card />
+                                </li>
+                                <li>
+                                    <Card />
+                                </li>
+                                <li>
+                                    <Card />
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
                 </section>
             </Container>
         </>
@@ -71,6 +83,8 @@ const MainPage = () => {
 };
 
 const Container = styled.div`
+    position: relative;
+
     & .welcome {
         background: #f6ebda;
         width: 100%;
@@ -121,16 +135,15 @@ const Container = styled.div`
 
                     & a {
                         width: 10em;
-                        height: 2.4em;
+                        height: 3em;
                         color: #f4ae26;
                         cursor: pointer;
-                        font-weight: 600;
                         background-color: #fff;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         border-radius: 2em;
-                        
+                        border: none;
                     }
                 }
             }
@@ -218,34 +231,57 @@ const Container = styled.div`
                 }
             }
         }
-
-        & .coffee-beans-bottom {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            z-index: -1;
-        }
     }
 
     & .popular-now {
-      position: relative;
+        position: absolute;
+        top: 70%;
+        padding: 2em 8em;
+        height: 60%;
+        width: 100%;
 
-      & .title {
-        font-size: 2em;
-        letter-spacing: 1.28px;
-        position: relative;
-        display: inline-block;
+        & .title {
+            font-size: 2em;
+            letter-spacing: 1.28px;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3em;
 
-        & span {
-          position: absolute;
-          top: 85%;
-          right: 0;
-          width: 2.5em;
-          height: 2px;
-          background-color: #ff902b;
-          border-radius: 12px;
+            & span {
+                position: absolute;
+                top: 85%;
+                right: 0;
+                width: 2.5em;
+                height: 2px;
+                background-color: #ff902b;
+                border-radius: 12px;
+            }
         }
-      }
+
+        & .ul-container {
+            width: 100%;
+            height: 100%;
+
+            & .ul-section {
+                margin-top: 2em;
+                background-color: #f9d9aa;
+                width: 100%;
+                height: 22.5em;
+                border-radius: 3em;
+                position: relative;
+                display: flex;
+                justify-content: center;
+
+                & .ul-options {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0em 4em;
+                    position: absolute;
+                    top: -25%;
+                    gap: 3em;
+                }
+            }
+        }
     }
 `;
 
