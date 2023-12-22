@@ -47,7 +47,7 @@ const Container = styled.div`
     position: relative;
     display: block;
     text-align: center;
-    box-shadow: 0px 0px 0px 4px #ffffff60, 1px 4px 15px 4px #00000040;
+    box-shadow: 0px 0px 0px 4px #ffffff60, 4px 6px 15px 6px #00000040;
 
 
     & .image {
