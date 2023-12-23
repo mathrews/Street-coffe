@@ -53,7 +53,6 @@ const MainPage = () => {
                             </div>
                         </section>
                     </section>
-
                 </section>
 
                 <section className="popular-now">
@@ -75,6 +74,12 @@ const MainPage = () => {
                                 </li>
                             </ul>
                         </div>
+                    </section>
+
+                    <section className="delivery-use">
+                        <h1>
+                            Hou to use delivery service<span></span>
+                        </h1>
                     </section>
                 </section>
             </Container>
