@@ -4,7 +4,9 @@ import cartIcon from "../../assets/cart button.svg";
 import coffee from "../../assets/unsplash_PKXAiiy1O4U.svg";
 import starIcon from "../../assets/akar-icons_star.svg";
 import Card from "../../components/Card";
-// import Card from "../../components/Card";
+import touchCoffe from "../../assets/touch-coffe.svg";
+import coffeTruck from "../../assets/food-truck 1.svg";
+import coffeCup from "../../assets/coffee-cup 2.svg";
 
 const MainPage = () => {
     return (
@@ -56,31 +58,60 @@ const MainPage = () => {
                 </section>
 
                 <section className="popular-now">
-                    <h1 className="title">
-                        Popular Now<span></span>
+                    <section className="container">
+                        <h1 className="title">
+                            Popular Now<span></span>
+                        </h1>
+
+                        <section className="ul-container">
+                            <div className="ul-section">
+                                <ul className="ul-options">
+                                    <li>
+                                        <Card />
+                                    </li>
+                                    <li>
+                                        <Card />
+                                    </li>
+                                    <li>
+                                        <Card />
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+
+                <section className="delivery-use">
+                    <h1>
+                        Hou to use delivery service<span></span>
                     </h1>
 
-                    <section className="ul-container">
-                        <div className="ul-section">
-                            <ul className="ul-options">
-                                <li>
-                                    <Card />
-                                </li>
-                                <li>
-                                    <Card />
-                                </li>
-                                <li>
-                                    <Card />
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
+                    <ul>
+                        <li>
+                            <div>
+                                <img src={touchCoffe} alt="touch coffe" />
+                            </div>
 
-                    <section className="delivery-use">
-                        <h1>
-                            Hou to use delivery service<span></span>
-                        </h1>
-                    </section>
+                            <h3>choose your coffee</h3>
+                            <p>there are 20+ coffees for you</p>
+                        </li>
+                        <li>
+                            <div>
+                                <img src={coffeTruck} alt="coffe truck" />
+                            </div>
+
+                            <h3>we delivery it to you</h3>
+                            <p>Choose delivery service</p>
+                        </li>
+                        <li>
+                            <div>
+                                <img src={coffeCup} alt="coffe cup" />
+                            </div>
+
+                            <h3>Enjoy your coffee</h3>
+                            <p>Choose delivery service</p>
+                        </li>
+                    </ul>
                 </section>
             </Container>
         </>
@@ -239,51 +270,101 @@ const Container = styled.div`
     }
 
     & .popular-now {
-        position: absolute;
-        top: 70%;
-        padding: 2em 8em;
-        height: 60%;
+        position: relative;
+        height: 40vh;
         width: 100%;
 
-        & .title {
+        & .container {
+            position: absolute;
+            bottom: 0;
+            padding: 2em 8em;
+            width: 100%;
+
+            & .title {
+                font-size: 2em;
+                letter-spacing: 1.28px;
+                position: relative;
+                display: inline-block;
+                margin-bottom: 3em;
+
+                & span {
+                    position: absolute;
+                    top: 85%;
+                    right: 0;
+                    width: 2.5em;
+                    height: 4px;
+                    background-color: #ff902b;
+                    border-radius: 12px;
+                }
+            }
+
+            & .ul-container {
+                width: 100%;
+                height: 100%;
+
+                & .ul-section {
+                    margin-top: 2em;
+                    background-color: #f9d9aa;
+                    width: 100%;
+                    height: 22.5em;
+                    border-radius: 3em;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+
+                    & .ul-options {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0em 4em;
+                        position: absolute;
+                        top: -25%;
+                        gap: 3em;
+                    }
+                }
+            }
+        }
+    }
+
+    & .delivery-use {
+        position: relative;
+        padding: 2em 8em;
+        margin-top: 2em;
+        height: 60vh;
+        width: 100%;
+
+        & h1 {
             font-size: 2em;
             letter-spacing: 1.28px;
             position: relative;
             display: inline-block;
-            margin-bottom: 3em;
-
+            
             & span {
                 position: absolute;
                 top: 85%;
-                right: 0;
-                width: 2.5em;
-                height: 2px;
+                right: 0.39%;
+                width: 4em;
+                height: 4px;
                 background-color: #ff902b;
                 border-radius: 12px;
             }
         }
 
-        & .ul-container {
-            width: 100%;
-            height: 100%;
+        & ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 3em;
 
-            & .ul-section {
-                margin-top: 2em;
-                background-color: #f9d9aa;
-                width: 100%;
-                height: 22.5em;
-                border-radius: 3em;
-                position: relative;
-                display: flex;
-                justify-content: center;
+            & li {
+                text-align: center;
 
-                & .ul-options {
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 0em 4em;
-                    position: absolute;
-                    top: -25%;
-                    gap: 3em;
+                & div {
+                    display: block;
+                    padding-bottom: 0.5em;
+                }
+
+                & h3 {
+                    padding-bottom: 0.3em;
                 }
             }
         }
