@@ -113,6 +113,10 @@ const MainPage = () => {
                         </li>
                     </ul>
                 </section>
+
+                <section className="about-us">
+                    
+                </section>
             </Container>
         </>
     );
