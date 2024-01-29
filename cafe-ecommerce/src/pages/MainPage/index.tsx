@@ -7,6 +7,9 @@ import Card from "../../components/Card";
 import touchCoffe from "../../assets/touch-coffe.svg";
 import coffeTruck from "../../assets/food-truck 1.svg";
 import coffeCup from "../../assets/coffee-cup 2.svg";
+import coffeAboutUs from "../../assets/coffe-about.svg";
+import bgImageAbout from "../../assets/bg-image.svg";
+import vannilaCoffe from "../../assets/vannila.svg";
 
 const MainPage = () => {
     return (
@@ -67,13 +70,25 @@ const MainPage = () => {
                             <div className="ul-section">
                                 <ul className="ul-options">
                                     <li>
-                                        <Card />
+                                        <Card
+                                            image={vannilaCoffe}
+                                            name="Vanilla Latte"
+                                            buys="21 K"
+                                        />
                                     </li>
                                     <li>
-                                        <Card />
+                                        <Card
+                                            image={vannilaCoffe}
+                                            name="Espresso"
+                                            buys="12 K"
+                                        />
                                     </li>
                                     <li>
-                                        <Card />
+                                        <Card
+                                            image={vannilaCoffe}
+                                            name="Hazelnut Latte"
+                                            buys="23 K"
+                                        />
                                     </li>
                                 </ul>
                             </div>
@@ -112,6 +127,37 @@ const MainPage = () => {
                             <p>Choose delivery service</p>
                         </li>
                     </ul>
+                </section>
+
+                <section className="about-us">
+                    <div className="content">
+                        <section>
+                            <div>
+                                <img src={coffeAboutUs} alt="" />
+                            </div>
+                        </section>
+                        <section>
+                            <div>
+                                <div>
+                                    <h1>
+                                        About us<span></span>
+                                    </h1>
+                                </div>
+                                <h2>
+                                    We provide quality coffee,
+                                    <br /> and ready to deliver.
+                                </h2>
+                                <p>
+                                    We are a company that makes and distributes{" "}
+                                    <br />
+                                    delicious drinks. our main product is made
+                                    with a <br /> secret recipe and available in
+                                    stores worldwide.
+                                </p>
+                                <button>Get your coffe</button>
+                            </div>
+                        </section>
+                    </div>
                 </section>
             </Container>
         </>
@@ -337,7 +383,7 @@ const Container = styled.div`
             letter-spacing: 1.28px;
             position: relative;
             display: inline-block;
-            
+
             & span {
                 position: absolute;
                 top: 85%;
@@ -365,6 +411,88 @@ const Container = styled.div`
 
                 & h3 {
                     padding-bottom: 0.3em;
+                }
+            }
+        }
+    }
+
+    & .about-us {
+        width: 100%;
+        position: relative;
+        padding: 2em 8em;
+        margin-top: 5em;
+        background: url(${bgImageAbout}) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+        & .content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            position: relative;
+
+            & section:first-child {
+                width: 50%;
+                & div {
+                    & img {
+                        box-shadow: 0px 0px 0px 4px #ffffff60,
+                            4px 6px 15px 6px #00000040;
+                        border-radius: 12px;
+                        width: 60%;
+                    }
+                }
+            }
+
+            & section:nth-child(2) {
+                width: 50%;
+
+                & div {
+                    padding-bottom: 2em;
+                    & h1 {
+                        font-size: 2em;
+                        letter-spacing: 1.28px;
+                        position: relative;
+                        display: inline-block;
+                        & span {
+                            position: absolute;
+                            top: 85%;
+                            right: 0.39%;
+                            width: 1.3em;
+                            height: 4px;
+                            background-color: #ff902b;
+                            border-radius: 12px;
+                        }
+                    }
+                }
+
+                & h2 {
+                    padding-bottom: 1em;
+                }
+
+                & p {
+                    font-size: 1.2em;
+                    color: #7e7d7a;
+                    padding-bottom: 2em;
+                }
+
+                & button {
+                    color: #f4ae26;
+                    text-align: center;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    padding: 0.8em 1.8em;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    flex-shrink: 0;
+                    border-radius: 33px;
+                    background: var(--Secondary, #2f2105);
                 }
             }
         }
