@@ -1,8 +1,13 @@
 import styled from "styled-components";
 import starIcon from "../../assets/akar-icons_star.svg";
-import vannilaCoffe from "../../assets/vannila.svg";
 
-const Card = () => {
+type propsCard = {
+    image: string,
+    name: string,
+    buys: string
+}
+
+const Card = ({image, name, buys}: propsCard) => {
     return (
         <>
             <Container>
@@ -13,13 +18,13 @@ const Card = () => {
                             <img src={starIcon} alt="star-avaliation" />
                         </div>
                     </span>
-                    <img className="coffeImage" src={vannilaCoffe} alt="" />
+                    <img className="coffeImage" src={image} alt="" />
                 </div>
 
                 <div className="initial-infos">
                     <div className="name-buys">
-                        <h1 className="name">Coffe name</h1>
-                        <h1 className="buys">21k</h1>
+                        <h1 className="name">{name}</h1>
+                        <h1 className="buys">{buys}</h1>
                     </div>
 
                     <div className="categorys-buy">
